@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Whisper + Notes App</title>
+</head>
+<body>
+    <h2>Upload Audio</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="audio_file">
+        <button type="submit">Transcribe & Generate Notes</button>
+    </form>
+
+    {% if transcript %}
+        <h3>Transcript:</h3>
+        <pre>{{ transcript }}</pre>
+    {% endif %}
+
+    {% if notes %}
+        <h3>Generated Notes:</h3>
+        <pre>{{ notes }}</pre>
+    {% endif %}
+</body>
+</html>
